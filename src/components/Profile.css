@@ -1,0 +1,19 @@
+.content {
+  grid-area: cont;
+}
+
+.content_img {
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+}
+
+.description {
+  display: flex;
+}
+
+.avatar {
+  margin-right: 20px;
+  width: 100px;
+  height: 100px;
+}

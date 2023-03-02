@@ -1,0 +1,12 @@
+.header {
+  grid-area: header;
+  background: linear-gradient(
+    to right,
+    rgb(64, 234, 240),
+    rgb(183, 241, 243),
+    rgb(64, 234, 240)
+  );
+}
+.header img {
+  height: 100%;
+}
