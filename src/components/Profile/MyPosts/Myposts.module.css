@@ -1,0 +1,28 @@
+.posts {
+  height: 68%;
+  overflow-y: auto;
+}
+
+.myPost {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.myPost button {
+  margin-top: 10px;
+  margin-right: 20px;
+  width: 20%;
+  min-width: 70px;
+  align-self: flex-end;
+  font-weight: bold;
+  background-color: rgb(64, 234, 240);
+  color: blue;
+  cursor: pointer;
+  border: 1px solid blue;
+}
+
+.myPost button:hover {
+  background-color: blue;
+  color: rgb(64, 234, 240);
+}

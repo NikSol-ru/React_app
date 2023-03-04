@@ -1,0 +1,24 @@
+.nav {
+  grid-area: nav;
+  padding-left: 2vw;
+  padding-top: 3vh;
+  font-weight: bold;
+  color: blue;
+  background-color: rgb(64, 234, 240);
+}
+
+.nav div {
+  margin-bottom: 5px;
+}
+
+.nav div a {
+  text-decoration: none;
+}
+
+.nav :last-child {
+  margin-top: 20px;
+}
+
+.nav div:hover {
+  text-decoration: underline;
+}

@@ -7,6 +7,8 @@
     rgb(64, 234, 240)
   );
 }
-.header img {
+
+img {
+  padding: 5px;
   height: 100%;
 }

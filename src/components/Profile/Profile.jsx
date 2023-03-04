@@ -1,16 +1,17 @@
-import "./Profile.css";
+import MyPosts from "./MyPosts/MyPosts";
+import s from "./Profile.module.css";
 
 const Profile = () => {
   return (
-    <div className="content">
+    <div className={s.content}>
       <img
-        className="content_img"
+        className={s.content_img}
         src="https://gt-news.ru/wp-content/uploads/2020/11/gt-news-bmw-ix-10-690x380.jpg"
         alt="auto"
       ></img>
-      <div className="description">
+      <div className={s.description}>
         <img
-          className="avatar"
+          className={s.avatar}
           src="https://img.freepik.com/premium-vector/portrait-of-a-young-man-with-beard-and-hair-style-male-avatar-vector-illustration_266660-423.jpg"
           alt="ava"
         ></img>
@@ -21,15 +22,7 @@ const Profile = () => {
           долларов ежегодно.
         </p>
       </div>
-      <div>
-        <p>New Post</p>
-      </div>
-      <div>
-        <p>Post1</p>
-      </div>
-      <div>
-        <p>Post2</p>
-      </div>
+      <MyPosts></MyPosts>
     </div>
   );
 };
