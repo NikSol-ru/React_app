@@ -12,3 +12,7 @@
   grid-template-columns: 2fr 10fr;
   gap: 10px;
 }
+
+.wrapper_content {
+  grid-area: cont;
+}

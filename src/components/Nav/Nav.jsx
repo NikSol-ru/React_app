@@ -1,9 +1,9 @@
 import Link from "./Link/Link";
-import s from "./Nav.module.css";
+import c from "./Nav.module.css";
 
 const Nav = () => {
   return (
-    <nav className={s.nav}>
+    <nav className={c.nav}>
       <Link href="www.google.ru" link="Профиль"></Link>
       <Link href="#c" link="Сообщения"></Link>
       <Link href="#c" link="Новости"></Link>

@@ -1,8 +1,8 @@
-import s from "./Link.module.css";
+import c from "./Link.module.css";
 
 const Link = (props) => {
   return (
-    <a className={s.link} href={props.href}>
+    <a className={c.link} href={props.href}>
       {props.link}
     </a>
   );

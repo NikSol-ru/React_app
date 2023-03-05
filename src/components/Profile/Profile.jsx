@@ -1,17 +1,17 @@
 import MyPosts from "./MyPosts/MyPosts";
-import s from "./Profile.module.css";
+import c from "./Profile.module.css";
 
 const Profile = () => {
   return (
-    <div className={s.content}>
+    <div>
       <img
-        className={s.content_img}
+        className={c.content_img}
         src="https://gt-news.ru/wp-content/uploads/2020/11/gt-news-bmw-ix-10-690x380.jpg"
         alt="auto"
       ></img>
-      <div className={s.description}>
+      <div className={c.description}>
         <img
-          className={s.avatar}
+          className={c.avatar}
           src="https://img.freepik.com/premium-vector/portrait-of-a-young-man-with-beard-and-hair-style-male-avatar-vector-illustration_266660-423.jpg"
           alt="ava"
         ></img>
