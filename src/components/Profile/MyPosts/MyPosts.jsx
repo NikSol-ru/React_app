@@ -1,13 +1,9 @@
 import Post from "./Post/Post";
 import s from "./Myposts.module.css";
 
-const data1 = {
-  message: "Привет! Как дела?",
-  like: 15,
-};
-const data2 = {
-  message: "Все хорошо!",
-  like: 20,
+const data = {
+  message: ["Привет! Как дела?", "Все хорошо!"],
+  like: [15, 20],
 };
 
 const MyPosts = () => {
@@ -18,8 +14,8 @@ const MyPosts = () => {
         <textarea name="myPost" id="myPost" cols="30" rows="7"></textarea>
         <button>Submit</button>
       </div>
-      <Post message={data1.message} like={data1.like}></Post>
-      <Post message={data2.message} like={data2.like}></Post>
+      <Post message={data.message[0]} like={data.like[0]}></Post>
+      <Post message={data.message[1]} like={data.like[1]}></Post>
     </div>
   );
 };

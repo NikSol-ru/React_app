@@ -1,23 +1,14 @@
+import Link from "./Link/Link";
 import s from "./Nav.module.css";
 
 const Nav = () => {
   return (
     <nav className={s.nav}>
-      <div>
-        <a href="#c">Profile</a>
-      </div>
-      <div>
-        <a href="#c">Message</a>
-      </div>
-      <div>
-        <a href="#c">News</a>
-      </div>
-      <div>
-        <a href="#c">Music</a>
-      </div>
-      <div>
-        <a href="#c">Setting</a>
-      </div>
+      <Link href="www.google.ru" link="Профиль"></Link>
+      <Link href="#c" link="Сообщения"></Link>
+      <Link href="#c" link="Новости"></Link>
+      <Link href="#c" link="Музыка"></Link>
+      <Link href="#c" link="Настройки"></Link>
     </nav>
   );
 };

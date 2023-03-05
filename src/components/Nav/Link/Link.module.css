@@ -1,0 +1,9 @@
+.link {
+  display: block;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
