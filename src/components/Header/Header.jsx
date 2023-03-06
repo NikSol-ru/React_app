@@ -4,7 +4,8 @@ const Header = () => {
   return (
     <header className={c.header}>
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/600px-BMW_logo_%28gray%29.svg.png"
+        className={c.logo}
+        src="https://www.advgazeta.ru/upload/iblock/bc4/novaya_zhizn_dlya_polzovateley_sotsialnykh_setey_1.jpg"
         alt="logo"
       ></img>
     </header>
