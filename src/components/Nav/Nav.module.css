@@ -10,6 +10,23 @@
   background-color: rgb(64, 234, 240);
 }
 
+.nav * {
+  margin: 5px 0;
+}
+
 .nav :last-child {
   margin-top: 20px;
+}
+
+.item {
+  text-decoration: none;
+}
+
+.item:hover {
+  text-decoration: underline;
+}
+
+.active {
+  color: green;
+  text-decoration: none;
 }
