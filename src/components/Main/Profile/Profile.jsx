@@ -1,4 +1,3 @@
-import MyPosts from "./MyPosts/MyPosts";
 import c from "./Profile.module.css";
 
 const Profile = () => {
@@ -22,7 +21,6 @@ const Profile = () => {
           долларов ежегодно.
         </p>
       </div>
-      <MyPosts></MyPosts>
     </div>
   );
 };

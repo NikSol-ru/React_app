@@ -6,7 +6,6 @@
   padding-right: 20px;
   padding-top: 3vh;
   font-weight: bold;
-  color: blue;
   background-color: rgb(64, 234, 240);
 }
 
@@ -26,7 +25,11 @@
   text-decoration: underline;
 }
 
+.item {
+  color: blue;
+}
+
 .active {
-  color: green;
+  color: violet;
   text-decoration: none;
 }
