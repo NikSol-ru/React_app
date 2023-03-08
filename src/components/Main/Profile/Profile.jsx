@@ -1,4 +1,5 @@
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import MyPostsBlock from "./MyPostsBlock/MyPostsBlock";
 import c from "./Profile.module.css";
 
 const Profile = () => {
@@ -10,6 +11,7 @@ const Profile = () => {
         alt="auto"
       ></img>
       <ProfileInfo userName="Николай" userBirthday="03.09.1979"></ProfileInfo>
+      <MyPostsBlock></MyPostsBlock>
     </div>
   );
 };

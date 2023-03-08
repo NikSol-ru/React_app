@@ -4,7 +4,9 @@ import c from "./Dialogs.module.css";
 const DialogItem = (props) => {
   return (
     <div>
-      <NavLink to={`/dialogs/${props.userId}`}>{props.userName}</NavLink>
+      <NavLink className={c.dialog} to={`/dialogs/${props.userId}`}>
+        {props.userName}
+      </NavLink>
     </div>
   );
 };
@@ -14,20 +16,33 @@ const Message = (props) => {
 };
 
 const Dialogs = () => {
+  let dialogsData = [
+    { id: 1, userName: "Коля" },
+    { id: 2, userName: "Гуля" },
+    { id: 3, userName: "Петрович" },
+    { id: 4, userName: "Артем" },
+    { id: 5, userName: "Туман" },
+  ];
+
+  let messagesData = [
+    { id: 1, message: "Привет!" },
+    { id: 2, message: "Как дела?" },
+    { id: 3, message: "Все хорошо)" },
+    { id: 4, message: "А у тебя?" },
+  ];
+
   return (
     <div className={c.dialogs}>
       <div className={c.dialogs_items}>
-        <DialogItem userId="1" userName="Коля"></DialogItem>
-        <DialogItem userId="2" userName="Гуля"></DialogItem>
-        <DialogItem userId="3" userName="Петрович"></DialogItem>
-        <DialogItem userId="4" userName="Артем"></DialogItem>
-        <DialogItem userId="5" userName="Туман"></DialogItem>
+        <h2>Диалоги</h2>
+        {dialogsData.map((item) => (
+          <DialogItem userId={item.id} userName={item.userName}></DialogItem>
+        ))}
       </div>
       <div className={c.messages}>
-        <Message message="Привет!"></Message>
-        <Message message="Как дела?"></Message>
-        <Message message="Все хорошо)"></Message>
-        <Message message="А у тебя?"></Message>
+        {messagesData.map((item) => (
+          <Message message={item.message}></Message>
+        ))}
       </div>
     </div>
   );
