@@ -4,15 +4,18 @@
 }
 
 .wrapper {
+  margin: 0 auto;
   display: grid;
   grid-template-areas:
     "header header"
     "nav cont";
-  grid-template-rows: 70px 87vh;
-  grid-template-columns: 2fr 10fr;
-  gap: 10px;
+  grid-template-rows: 10vh 89vh;
+  grid-template-columns: 20% 79%;
+  gap: 1%;
 }
 
 .wrapper_content {
   grid-area: cont;
+  height: 83vh;
+  overflow-y: auto;
 }

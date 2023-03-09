@@ -1,0 +1,36 @@
+.inputPost {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.textareaWrap {
+  margin: 0 auto 50px;
+  width: 80%;
+  min-height: 30px;
+  padding: 5px;
+  border: 2px solid;
+  border-radius: 15px;
+}
+
+.textarea {
+  display: inline-table;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.textarea:focus {
+  outline: none;
+  border: none;
+}
+
+.postSend {
+  position: absolute;
+  top: 110%;
+  right: 12%;
+  padding: 5px;
+  border: 2px solid blue;
+  background-color: aqua;
+  border-radius: 5px;
+  cursor: pointer;
+}

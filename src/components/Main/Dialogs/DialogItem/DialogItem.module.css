@@ -1,0 +1,19 @@
+.dialog {
+  line-height: 30px;
+  text-decoration: none;
+}
+
+.dialog::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.active {
+  color: rgb(0, 197, 26);
+}

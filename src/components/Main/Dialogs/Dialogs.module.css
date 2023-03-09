@@ -2,33 +2,14 @@
   display: flex;
 }
 
+.dialogs_header {
+  margin-bottom: 20px;
+}
+
 .dialogs_items {
   flex-grow: 1;
 }
 
-.dialog {
-  margin: 10px 0;
-  line-height: 20px;
-}
-
-.dialog::before {
-  content: "";
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  background-color: black;
-  border-radius: 50%;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-.active {
-  color: rgb(0, 197, 26);
-}
-
 .messages {
   flex-grow: 2;
-}
-
-.message {
 }
