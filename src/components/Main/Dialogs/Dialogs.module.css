@@ -12,4 +12,6 @@
 
 .messages {
   flex-grow: 2;
+  max-height: 63vh;
+  overflow-y: auto;
 }

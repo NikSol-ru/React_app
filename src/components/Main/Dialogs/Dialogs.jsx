@@ -1,5 +1,6 @@
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import AddedMessage from "./AddedMessage/AddedMessage";
 import c from "./Dialogs.module.css";
 
 const Dialogs = (props) => {
@@ -15,6 +16,7 @@ const Dialogs = (props) => {
         {props.data.messagesData.map((item) => (
           <Message message={item.message}></Message>
         ))}
+        <AddedMessage></AddedMessage>
       </div>
     </div>
   );
