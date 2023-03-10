@@ -11,7 +11,10 @@ const Profile = (props) => {
         alt="auto"
       ></img>
       <ProfileInfo userName="Николай" userBirthday="03.09.1979"></ProfileInfo>
-      <MyPostsBlock postsData={props.data.postsData}></MyPostsBlock>
+      <MyPostsBlock
+        postsData={props.data.postsData}
+        addPost={props.addPost}
+      ></MyPostsBlock>
     </div>
   );
 };

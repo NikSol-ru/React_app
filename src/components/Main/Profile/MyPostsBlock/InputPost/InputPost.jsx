@@ -1,11 +1,12 @@
 import React from "react";
 import c from "./InputPost.module.css";
 
-const InputPost = () => {
+const InputPost = (props) => {
   const newPostElement = React.createRef();
 
   const addPost = () => {
-    console.log(newPostElement.current.value);
+    let text = newPostElement.current.value;
+    props.addPost(text);
   };
 
   return (

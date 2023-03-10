@@ -1,15 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { rerenderEntireThree } from "./render";
+import state from "./state/state";
+import { addPost } from "./state/state";
 import './index.css';
-import App from './App';
-import state from './state/state';
-import { BrowserRouter } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App state={state} />
-    </BrowserRouter>
-  </React.StrictMode>
-);
+
+rerenderEntireThree(state, addPost);
+

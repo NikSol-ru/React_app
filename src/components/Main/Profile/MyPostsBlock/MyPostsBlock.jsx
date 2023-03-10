@@ -6,7 +6,7 @@ const MyPosts = (props) => {
   return (
     <div className={c.myPosts}>
       <h2>Мои посты</h2>
-      <InputPost></InputPost>
+      <InputPost addPost={props.addPost}></InputPost>
       {props.postsData.map((p) => (
         <Post id={p.id} post={p.post} like={p.likesCount}></Post>
       ))}

@@ -1,3 +1,5 @@
+import { rerenderEntireThree } from "../render";
+
 const state = {
     postsPage: {
         postsData: [
@@ -21,31 +23,18 @@ const state = {
             { id: 2, message: "Как дела?" },
             { id: 3, message: "Все хорошо)" },
             { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
-            { id: 4, message: "А у тебя?" },
         ]
     }
 };
+
+export const addPost = (postMessage) => {
+    let newPost = {
+        post: postMessage,
+        id: state.postsPage.postsData.length + 1,
+        likesCount: 0
+    };
+    state.postsPage.postsData.push(newPost);
+    rerenderEntireThree(state, addPost);
+}
 
 export default state;
