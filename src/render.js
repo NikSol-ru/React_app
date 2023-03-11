@@ -4,12 +4,12 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
 
-export const rerenderEntireThree = (state, addPost) => {
-    const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+export const rerenderEntireThree = (state, addPost, updateNewPostText) => {
     root.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App state={state} addPost={addPost} />
+                <App state={state} addPost={addPost} updateNewPostText={updateNewPostText} />
             </BrowserRouter>
         </React.StrictMode>
     );

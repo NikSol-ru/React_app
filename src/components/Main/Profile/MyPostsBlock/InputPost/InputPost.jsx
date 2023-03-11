@@ -7,12 +7,23 @@ const InputPost = (props) => {
   const addPost = () => {
     let text = newPostElement.current.value;
     props.addPost(text);
+    newPostElement.current.value = "";
+  };
+
+  const onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
   };
 
   return (
     <div className={c.inputPost}>
       <div className={c.textareaWrap}>
-        <textarea className={c.textarea} ref={newPostElement}></textarea>
+        <textarea
+          className={c.textarea}
+          ref={newPostElement}
+          onInput={onPostChange}
+          value={props.newText}
+        ></textarea>
       </div>
       <button className={c.postSend} onClick={addPost}>
         Отправить

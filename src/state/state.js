@@ -7,6 +7,7 @@ const state = {
             { id: 2, post: "Мой второй пост", likesCount: 12 },
             { id: 3, post: "Мой третий пост", likesCount: 16 },
         ],
+        newText: 'Привет!'
     },
 
     dialogsPage: {
@@ -27,6 +28,8 @@ const state = {
     }
 };
 
+window.state = state;
+
 export const addPost = (postMessage) => {
     let newPost = {
         post: postMessage,
@@ -34,7 +37,12 @@ export const addPost = (postMessage) => {
         likesCount: 0
     };
     state.postsPage.postsData.push(newPost);
-    rerenderEntireThree(state, addPost);
+    rerenderEntireThree(state, addPost, updateNewPostText);
+}
+
+export const updateNewPostText = (newText) => {
+    state.postsPage.newText = newText;
+    rerenderEntireThree(state, addPost, updateNewPostText);
 }
 
 export default state;

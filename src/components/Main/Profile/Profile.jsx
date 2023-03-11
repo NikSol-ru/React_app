@@ -13,6 +13,8 @@ const Profile = (props) => {
       <ProfileInfo userName="Николай" userBirthday="03.09.1979"></ProfileInfo>
       <MyPostsBlock
         postsData={props.data.postsData}
+        newText={props.data.newText}
+        updateNewPostText={props.updateNewPostText}
         addPost={props.addPost}
       ></MyPostsBlock>
     </div>
