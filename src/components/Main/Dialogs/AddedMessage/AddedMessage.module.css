@@ -3,7 +3,6 @@
   margin: 10px;
   width: 45%;
   bottom: 2vh;
-  height: 20vh;
 }
 
 .textareaWrap {
@@ -12,6 +11,7 @@
   padding: 5px;
   border: 2px solid;
   border-radius: 15px;
+  background-color: white;
 }
 
 .textarea {
@@ -31,8 +31,14 @@
   right: 12%;
   padding: 5px;
   border: 2px solid blue;
-  background-color: aqua;
+  background: linear-gradient(
+    to right,
+    rgb(64, 234, 240),
+    rgb(183, 241, 243),
+    rgb(64, 234, 240)
+  );
   border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
 }
 

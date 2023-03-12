@@ -7,7 +7,7 @@ const InputPost = (props) => {
   const addPost = () => {
     let text = newPostElement.current.value;
     props.addPost(text);
-    newPostElement.current.value = "";
+    props.updateNewPostText("");
   };
 
   const onPostChange = () => {

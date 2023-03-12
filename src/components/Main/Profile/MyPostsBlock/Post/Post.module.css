@@ -4,4 +4,16 @@
   padding: 10px;
   border: 1px solid blue;
   border-radius: 15px;
+  background-color: rgb(243, 247, 207);
+}
+
+.postText {
+  width: 100%;
+  height: auto;
+  word-wrap: break-word;
+}
+
+.postLike {
+  text-align: end;
+  margin-top: 10px;
 }

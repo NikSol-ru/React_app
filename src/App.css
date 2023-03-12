@@ -16,6 +16,11 @@
 
 .wrapper_content {
   grid-area: cont;
-  height: 83vh;
+  height: 89vh;
   overflow-y: auto;
+  background: linear-gradient(
+    to bottom right,
+    rgb(243, 253, 94),
+    rgb(114, 247, 88)
+  );
 }
