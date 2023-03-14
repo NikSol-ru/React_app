@@ -15,7 +15,7 @@ const AddedMessage = () => {
         <textarea className={c.textarea} ref={newMessageElement}></textarea>
       </div>
       <button className={c.messageSend} onClick={addMessage}>
-        Добавить сообщение
+        Отправить сообщение
       </button>
     </div>
   );

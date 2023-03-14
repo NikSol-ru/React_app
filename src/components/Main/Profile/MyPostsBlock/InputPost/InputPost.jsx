@@ -1,18 +1,21 @@
 import React from "react";
+import {
+  addPostActionCreator,
+  updateNewPostTextActionCreator,
+} from "../../../../../state/state";
 import c from "./InputPost.module.css";
 
 const InputPost = (props) => {
   const newPostElement = React.createRef();
 
   const addPost = () => {
-    let text = newPostElement.current.value;
-    props.addPost(text);
-    props.updateNewPostText("");
+    props.dispatch(addPostActionCreator());
   };
 
   const onPostChange = () => {
-    let text = newPostElement.current.value;
-    props.updateNewPostText(text);
+    props.dispatch(
+      updateNewPostTextActionCreator(newPostElement.current.value)
+    );
   };
 
   return (
@@ -21,7 +24,7 @@ const InputPost = (props) => {
         <textarea
           className={c.textarea}
           ref={newPostElement}
-          onInput={onPostChange}
+          onChange={onPostChange}
           value={props.newText}
         ></textarea>
       </div>
