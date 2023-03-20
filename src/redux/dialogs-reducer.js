@@ -11,10 +11,13 @@ export const dialogsReducer = (state, action) => {
             };
             state.messagesData.push(newMessage);
             state.newMessageText = '';
-            break;
+            return state;
         case UPDATE_NEW_MESSAGE_TEXT:
             state.newMessageText = action.message;
-            break;
+            return state;
+        default: return state;
     }
-    return state;
 };
+
+export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
+export const updateNewMessageTextActionCreator = (newMessageText) => ({ type: UPDATE_NEW_MESSAGE_TEXT, message: newMessageText })

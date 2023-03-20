@@ -2,7 +2,7 @@ import React from "react";
 import {
   addMessageActionCreator,
   updateNewMessageTextActionCreator,
-} from "../../../../redux/state";
+} from "../../../../redux/dialogs-reducer";
 import c from "./AddedMessage.module.css";
 
 const AddedMessage = (props) => {

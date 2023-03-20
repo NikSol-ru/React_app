@@ -14,10 +14,13 @@ export const profileReducer = (state, action) => {
             };
             state.postsData.push(newPost);
             state.newText = '';
-            break;
+            return state;
         case UPDATE_NEW_POST_TEXT:
             state.newText = action.text;
-            break;
+            return state;
+        default: return state;
     }
-    return state;
 };
+
+export const addPostActionCreator = () => ({ type: ADD_POST });
+export const updateNewPostTextActionCreator = (newText) => ({ type: UPDATE_NEW_POST_TEXT, text: newText });
