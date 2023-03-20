@@ -6,6 +6,7 @@
 }
 
 .textareaWrap {
+  width: 80%;
   margin-bottom: 10px;
   min-height: 30px;
   padding: 5px;

@@ -2,7 +2,7 @@ import React from "react";
 import {
   addPostActionCreator,
   updateNewPostTextActionCreator,
-} from "../../../../../state/state";
+} from "../../../../../redux/state";
 import c from "./InputPost.module.css";
 
 const InputPost = (props) => {

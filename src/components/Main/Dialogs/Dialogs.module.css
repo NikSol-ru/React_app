@@ -8,11 +8,13 @@
 }
 
 .dialogs_items {
-  flex-grow: 1;
+  flex-grow: 2;
 }
 
 .messages {
   flex-grow: 2;
   max-height: 63vh;
-  overflow-y: auto;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }

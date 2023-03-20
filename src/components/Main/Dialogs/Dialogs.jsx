@@ -16,7 +16,10 @@ const Dialogs = (props) => {
         {props.data.messagesData.map((item) => (
           <Message message={item.message}></Message>
         ))}
-        <AddedMessage></AddedMessage>
+        <AddedMessage
+          dispatch={props.dispatch}
+          newMessageText={props.data.newMessageText}
+        ></AddedMessage>
       </div>
     </div>
   );

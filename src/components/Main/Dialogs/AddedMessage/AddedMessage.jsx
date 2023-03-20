@@ -1,21 +1,36 @@
 import React from "react";
+import {
+  addMessageActionCreator,
+  updateNewMessageTextActionCreator,
+} from "../../../../redux/state";
 import c from "./AddedMessage.module.css";
 
-const AddedMessage = () => {
+const AddedMessage = (props) => {
   const newMessageElement = React.createRef();
 
   const addMessage = () => {
-    console.log(newMessageElement.current.value);
+    props.dispatch(addMessageActionCreator(newMessageElement.current.value));
     newMessageElement.current.value = "";
+  };
+
+  const onMessageChange = () => {
+    props.dispatch(
+      updateNewMessageTextActionCreator(newMessageElement.current.value)
+    );
   };
 
   return (
     <div className={c.inputMessage}>
       <div className={c.textareaWrap}>
-        <textarea className={c.textarea} ref={newMessageElement}></textarea>
+        <textarea
+          value={props.newMessageText}
+          className={c.textarea}
+          ref={newMessageElement}
+          onChange={onMessageChange}
+        ></textarea>
       </div>
       <button className={c.messageSend} onClick={addMessage}>
-        Отправить сообщение
+        Отправить
       </button>
     </div>
   );

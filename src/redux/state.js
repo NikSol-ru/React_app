@@ -1,5 +1,11 @@
+import { profileReducer } from "./profile-reducer";
+import { dialogsReducer } from "./dialogs-reducer";
+
+/* eslint-disable default-case */
 const ADD_POST = "ADD-POST",
-    UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+    UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT",
+    ADD_MESSAGE = "ADD-MESSAGE",
+    UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 
 
 let store = {
@@ -27,7 +33,8 @@ let store = {
                 { id: 2, message: "Как дела?" },
                 { id: 3, message: "Все хорошо)" },
                 { id: 4, message: "А у тебя?" },
-            ]
+            ],
+            newMessageText: 'Hi!',
         }
     },
 
@@ -42,27 +49,20 @@ let store = {
     },
 
     dispatch (action) {
-        if (action.type === 'ADD-POST') {
-            let newPost = {
-                id: this._state.postsPage.postsData.length + 1,
-                post: this._state.postsPage.newText,
-                likesCount: 0
-            };
-            this._state.postsPage.postsData.push(newPost);
-            this._callSubscriber(this._state);
-            this._state.postsPage.newText = '';
-
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.postsPage.newText = action.text;
-            this._callSubscriber(this._state);
-        }
+        this._state.postsPage = profileReducer(this._state.postsPage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._callSubscriber(this._state);
     }
+
 }
 
 export const addPostActionCreator = () => ({ type: ADD_POST });
 
 export const updateNewPostTextActionCreator = (newText) => ({ type: UPDATE_NEW_POST_TEXT, text: newText });
 
+export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
+
+export const updateNewMessageTextActionCreator = (newMessageText) => ({ type: UPDATE_NEW_MESSAGE_TEXT, message: newMessageText })
 
 export default store;
 window.store = store;

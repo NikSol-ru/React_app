@@ -1,8 +1,10 @@
 .message {
-  width: 80%;
-  min-height: 30px;
+  width: 30vw;
+  height: auto;
   padding: 10px;
   margin: 10px;
   background-color: rgb(243, 247, 207);
-  border-radius: 30px;
+  border-radius: 15px;
+  word-wrap: break-word;
+  overflow: visible;
 }
