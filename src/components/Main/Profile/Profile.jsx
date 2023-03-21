@@ -1,5 +1,5 @@
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import MyPostsBlock from "./MyPostsBlock/MyPostsBlock";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import c from "./Profile.module.css";
 
 const Profile = (props) => {
@@ -11,11 +11,7 @@ const Profile = (props) => {
         alt="auto"
       ></img>
       <ProfileInfo userName="Николай" userBirthday="03.09.1979"></ProfileInfo>
-      <MyPostsBlock
-        postsData={props.data.postsData}
-        newText={props.data.newText}
-        dispatch={props.dispatch}
-      ></MyPostsBlock>
+      <MyPostsContainer store={props.store}></MyPostsContainer>
     </div>
   );
 };
