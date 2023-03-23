@@ -3,7 +3,6 @@ import c from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-  console.log(props);
   const newPostElement = React.createRef();
 
   const addPost = () => {
@@ -20,7 +19,7 @@ const MyPosts = (props) => {
           className={c.textarea}
           ref={newPostElement}
           onChange={onPostChange}
-          value={props.newText}
+          value={props.newPostText}
         ></textarea>
         <button className={c.postSend} onClick={addPost}>
           Отправить
