@@ -29,6 +29,12 @@ const Nav = () => {
         "Музыка"
       </NavLink>
       <NavLink
+        to="/users"
+        className={(navData) => (navData.isActive ? c.active : c.item)}
+      >
+        "Пользователи"
+      </NavLink>
+      <NavLink
         to="/setting"
         className={(navData) => (navData.isActive ? c.active : c.item)}
       >

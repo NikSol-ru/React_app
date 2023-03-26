@@ -28,7 +28,7 @@ const MyPosts = (props) => {
       <div className={c.myPosts}>
         <h2>Мои посты</h2>
         {props.postsData.map((p) => (
-          <Post id={p.id} post={p.post} like={p.likesCount}></Post>
+          <Post id={p.id} key={p.id} post={p.post} like={p.likesCount}></Post>
         ))}
       </div>
     </div>

@@ -4,18 +4,21 @@ import AddedMessage from "./AddedMessage/AddedMessage";
 import c from "./Dialogs.module.css";
 
 const Dialogs = (props) => {
-  console.log(props);
   return (
     <div className={c.dialogs}>
       <div className={c.dialogs_items}>
         <h2 className={c.dialogs_header}>Диалоги</h2>
         {props.dialogsData.map((item) => (
-          <DialogItem userId={item.id} userName={item.userName}></DialogItem>
+          <DialogItem
+            userId={item.id}
+            userName={item.userName}
+            key={item.id}
+          ></DialogItem>
         ))}
       </div>
       <div className={c.messages}>
         {props.messagesData.map((item) => (
-          <Message message={item.message}></Message>
+          <Message message={item.message} key={item.id}></Message>
         ))}
         <AddedMessage
           newMessageText={props.newMessageText}

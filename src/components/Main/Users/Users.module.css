@@ -1,0 +1,64 @@
+.users h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.userContainer {
+  margin: 10px auto;
+  display: flex;
+  width: 50%;
+}
+
+.userAvaButton {
+  flex-basis: 20%;
+  padding-right: 20px;
+}
+
+.userText {
+  flex-basis: 77%;
+}
+
+.user {
+  margin: 5px auto;
+  padding: 10px;
+  width: 100%;
+  min-height: 20%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid;
+  border-radius: 15px;
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.ava {
+  display: block;
+  margin: 0 auto;
+  width: 35px;
+  height: 35px;
+}
+
+.buttonFollow {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(
+    to bottom right,
+    rgb(243, 253, 94),
+    rgb(114, 247, 88)
+  );
+  font-weight: bold;
+}
+
+.buttonFollow:hover {
+  cursor: pointer;
+  background: rgb(114, 247, 88);
+}
+.buttonFollow:active {
+  scale: 0.9;
+}
+
+.location {
+  text-align: end;
+}
