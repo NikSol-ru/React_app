@@ -1,50 +1,15 @@
+import axios from "axios";
 import React from "react";
 import c from "./Users.module.css";
 
 const Users = (props) => {
   if (props.users.length === 0) {
-    props.setUsers([
-      {
-        id: 1,
-        avatarUrl:
-          "https://w7.pngwing.com/pngs/165/652/png-transparent-businessperson-computer-icons-avatar-avatar-heroes-public-relations-business.png",
-        followed: false,
-        fullName: "Коля",
-        location: { city: "Южно-Подольск", country: "Россия" },
-      },
-      {
-        id: 2,
-        avatarUrl:
-          "https://w7.pngwing.com/pngs/165/652/png-transparent-businessperson-computer-icons-avatar-avatar-heroes-public-relations-business.png",
-        followed: false,
-        fullName: "Гуля",
-        location: { city: "Омск", country: "Россия" },
-      },
-      {
-        id: 3,
-        avatarUrl:
-          "https://w7.pngwing.com/pngs/165/652/png-transparent-businessperson-computer-icons-avatar-avatar-heroes-public-relations-business.png",
-        followed: true,
-        fullName: "Петрович",
-        location: { city: "Омск", country: "Россия" },
-      },
-      {
-        id: 4,
-        avatarUrl:
-          "https://w7.pngwing.com/pngs/165/652/png-transparent-businessperson-computer-icons-avatar-avatar-heroes-public-relations-business.png",
-        followed: true,
-        fullName: "Артем",
-        location: { city: "Омск", country: "Россия" },
-      },
-      {
-        id: 5,
-        avatarUrl:
-          "https://w7.pngwing.com/pngs/165/652/png-transparent-businessperson-computer-icons-avatar-avatar-heroes-public-relations-business.png",
-        followed: true,
-        fullName: "Туман",
-        location: { city: "Омск", country: "Россия" },
-      },
-    ]);
+    axios
+      .get("https://social-network.samuraijs.com/api/1.0/users")
+      .then((response) => {
+        console.log(response.data.items);
+        props.setUsers(response.data.items);
+      });
   }
 
   return (
@@ -53,7 +18,7 @@ const Users = (props) => {
       {props.users.map((u) => (
         <div key={u.id} className={c.userContainer}>
           <div className={c.userAvaButton}>
-            <img src={u.avatarUrl} alt="ava" className={c.ava} />
+            <img src={u.photos.small} alt="ava" className={c.ava} />
             <div>
               {u.followed ? (
                 <button
@@ -78,10 +43,10 @@ const Users = (props) => {
           </div>
           <div className={c.userText}>
             <div className={c.user}>
-              <p className={c.fullName}>{u.fullName}</p>
+              <p className={c.fullName}>{u.name}</p>
               <div className={c.location}>
-                <p className={c.city}>{u.location.city}</p>
-                <p className={c.country}>{u.location.country}</p>
+                <p className={c.city}>{"u.location.city"}</p>
+                <p className={c.country}>{"u.location.country"}</p>
               </div>
             </div>
           </div>
