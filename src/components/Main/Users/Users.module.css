@@ -1,7 +1,13 @@
+.users {
+  max-height: 80%;
+  overflow-y: scroll;
+}
+
 .users h2 {
   text-align: center;
   margin-bottom: 20px;
 }
+
 .userContainer {
   margin: 10px auto;
   display: flex;
@@ -61,4 +67,22 @@
 
 .location {
   text-align: end;
+}
+
+.usersButton {
+  position: fixed;
+  margin: 10px;
+  left: 50%;
+  width: 20%;
+  bottom: 2vh;
+  border: 2px solid blue;
+  background: linear-gradient(
+    to right,
+    rgb(64, 234, 240),
+    rgb(183, 241, 243),
+    rgb(64, 234, 240)
+  );
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
 }

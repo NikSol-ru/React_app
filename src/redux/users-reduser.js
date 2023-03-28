@@ -3,14 +3,6 @@ const FOLLOW = "FOLLOW",
     SET_USERS = "SET_USERS";
 
 let initialState = { users: [] }
-//     users: [
-//         // { id: 1, avatarUrl: 'https://w7.pngwing.com/pngs/165/652/png-transparent-businessperson-computer-icons-avatar-avatar-heroes-public-relations-business.png', followed: false, fullName: "Коля", location: { city: "Южно-Подольск", country: "Россия" } },
-//         // { id: 2, avatarUrl: 'https://w7.pngwing.com/pngs/165/652/png-transparent-businessperson-computer-icons-avatar-avatar-heroes-public-relations-business.png', followed: false, fullName: "Гуля", location: { city: "Омск", country: "Россия" } },
-//         // { id: 3, avatarUrl: 'https://w7.pngwing.com/pngs/165/652/png-transparent-businessperson-computer-icons-avatar-avatar-heroes-public-relations-business.png', followed: true, fullName: "Петрович", location: { city: "Омск", country: "Россия" } },
-//         // { id: 4, avatarUrl: 'https://w7.pngwing.com/pngs/165/652/png-transparent-businessperson-computer-icons-avatar-avatar-heroes-public-relations-business.png', followed: true, fullName: "Артем", location: { city: "Омск", country: "Россия" } },
-//         // { id: 5, avatarUrl: 'https://w7.pngwing.com/pngs/165/652/png-transparent-businessperson-computer-icons-avatar-avatar-heroes-public-relations-business.png', followed: true, fullName: "Туман", location: { city: "Омск", country: "Россия" } },
-//     ],
-// }
 
 export const usersReducer = (state = initialState, action) => {
     // eslint-disable-next-line default-case
