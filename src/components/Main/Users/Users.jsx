@@ -25,7 +25,7 @@ const Users = (props) => {
         ))}
       </div>
       <h2>Пользователи</h2>
-      {props.users.map((u) => (
+      {props.users.map((u, i) => (
         <div key={u.id} className={c.userContainer}>
           <div className={c.userAvaButton}>
             <img
@@ -59,8 +59,10 @@ const Users = (props) => {
             <div className={c.user}>
               <p className={c.fullName}>{u.name}</p>
               <div className={c.location}>
-                <p className={c.city}>{u.id}</p>
-                <p className={c.country}>{"u.location.country"}</p>
+                <p className={c.city}>{"c.city"}</p>
+                <p className={c.country}>
+                  {i + 1 + (props.currentPage - 1) * 100}
+                </p>
               </div>
             </div>
           </div>
