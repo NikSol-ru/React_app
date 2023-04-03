@@ -1,16 +1,26 @@
 import c from "./ProfileInfo.module.css";
+import avatar from "../../../../assets/images/man.png";
+import Preloader from "../../../common/Preloader/Preloader";
 
 const ProfileInfo = (props) => {
+  if (!props.profile) {
+    return <Preloader></Preloader>;
+  }
+  console.log(props);
   return (
     <div className={c.description}>
       <img
         className={c.avatar}
-        src="https://img.freepik.com/premium-vector/portrait-of-a-young-man-with-beard-and-hair-style-male-avatar-vector-illustration_266660-423.jpg"
+        src={
+          props.profile.photos.large === null
+            ? avatar
+            : props.profile.photos.large
+        }
         alt="ava"
       ></img>
       <div className="userInfo">
-        <p>{props.userName}</p>
-        <p>Дата рождения: {props.userBirthday}</p>
+        <p>{props.profile.fullName}</p>
+        <p>{props.profile.contacts.facebook}</p>
       </div>
     </div>
   );

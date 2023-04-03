@@ -4,7 +4,7 @@ import { dialogsReducer } from "./dialogs-reducer";
 import { usersReducer } from "./users-reduser";
 
 let reducers = combineReducers({
-    postsPage: profileReducer,
+    profilePage: profileReducer,
     dialogsPage: dialogsReducer,
     usersPage: usersReducer,
 });

@@ -1,6 +1,7 @@
 import React from "react";
 import c from "./Users.module.css";
 import photoAva from "../../../assets/images/man.png";
+import { NavLink } from "react-router-dom";
 
 const Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -28,11 +29,13 @@ const Users = (props) => {
       {props.users.map((u, i) => (
         <div key={u.id} className={c.userContainer}>
           <div className={c.userAvaButton}>
-            <img
-              src={u.photos.small === null ? photoAva : u.photos.small}
-              alt="ava"
-              className={c.ava}
-            />
+            <NavLink to={"../profile/"}>
+              <img
+                src={u.photos.small === null ? photoAva : u.photos.small}
+                alt="ava"
+                className={c.ava}
+              />
+            </NavLink>
             <div>
               {u.followed ? (
                 <button
@@ -55,17 +58,17 @@ const Users = (props) => {
               )}
             </div>
           </div>
-          <div className={c.userText}>
+          <NavLink to={"../profile/"} className={c.userText}>
             <div className={c.user}>
               <p className={c.fullName}>{u.name}</p>
               <div className={c.location}>
-                <p className={c.city}>{"c.city"}</p>
+                <p className={c.city}>{u.id}</p>
                 <p className={c.country}>
                   {i + 1 + (props.currentPage - 1) * 100}
                 </p>
               </div>
             </div>
-          </div>
+          </NavLink>
         </div>
       ))}
     </div>
