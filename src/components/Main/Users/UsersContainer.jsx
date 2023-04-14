@@ -17,7 +17,10 @@ class UsersContainer extends React.Component {
     this.props.toggleIsFeching(true);
     axios
       .get(
-        `https://social-network.samuraijs.com/api/1.0/users/?page=1&count=100`
+        `https://social-network.samuraijs.com/api/1.0/users/?page=1&count=100`,
+        {
+          withCredentials: true,
+        }
       )
       .then((response) => {
         this.props.toggleIsFeching(false);
@@ -31,7 +34,10 @@ class UsersContainer extends React.Component {
     this.props.toggleIsFeching(true);
     axios
       .get(
-        `https://social-network.samuraijs.com/api/1.0/users/?page=${pageNumber}&count=100`
+        `https://social-network.samuraijs.com/api/1.0/users/?page=${pageNumber}&count=100`,
+        {
+          withCredentials: true,
+        }
       )
       .then((response) => {
         this.props.toggleIsFeching(false);

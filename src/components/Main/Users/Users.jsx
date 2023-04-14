@@ -2,6 +2,7 @@ import React from "react";
 import c from "./Users.module.css";
 import photoAva from "../../../assets/images/man.png";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 const Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -40,7 +41,21 @@ const Users = (props) => {
               {u.followed ? (
                 <button
                   onClick={() => {
-                    props.unfollow(u.id);
+                    axios
+                      .delete(
+                        `https://social-network.samuraijs.com/api/1.0//follow/${u.id}`,
+                        {
+                          withCredentials: true,
+                          headers: {
+                            "API-KEY": "83f7e25f-303c-465d-8399-6de4a424aac3",
+                          },
+                        }
+                      )
+                      .then((response) => {
+                        if (response.data.resultCode === 0) {
+                          props.unfollow(u.id);
+                        }
+                      });
                   }}
                   className={c.buttonFollow}
                 >
@@ -49,7 +64,22 @@ const Users = (props) => {
               ) : (
                 <button
                   onClick={() => {
-                    props.follow(u.id);
+                    axios
+                      .post(
+                        `https://social-network.samuraijs.com/api/1.0//follow/${u.id}`,
+                        {},
+                        {
+                          withCredentials: true,
+                          headers: {
+                            "API-KEY": "83f7e25f-303c-465d-8399-6de4a424aac3",
+                          },
+                        }
+                      )
+                      .then((response) => {
+                        if (response.data.resultCode === 0) {
+                          props.follow(u.id);
+                        }
+                      });
                   }}
                   className={c.buttonFollow}
                 >
