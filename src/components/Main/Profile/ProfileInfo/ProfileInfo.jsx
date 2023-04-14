@@ -20,6 +20,9 @@ const ProfileInfo = (props) => {
       <div className="userInfo">
         <p>{props.profile.fullName}</p>
         <p>{props.profile.contacts.facebook}</p>
+        <p>{props.profile.contacts.vk}</p>
+        <p>{props.profile.contacts.website}</p>
+        <p>{props.profile.contacts.youtube}</p>
       </div>
     </div>
   );

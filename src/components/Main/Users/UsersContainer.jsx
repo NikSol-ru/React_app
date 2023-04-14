@@ -7,43 +7,31 @@ import {
   toggleIsFeching,
   unfollow,
 } from "../../../redux/users-reduser";
-import axios from "axios";
 import React from "react";
 import Users from "./Users";
 import Preloader from "../../common/Preloader/Preloader";
+import { usersApi } from "../../../api/api";
 
 class UsersContainer extends React.Component {
   componentDidMount() {
     this.props.toggleIsFeching(true);
-    axios
-      .get(
-        `https://social-network.samuraijs.com/api/1.0/users/?page=1&count=100`,
-        {
-          withCredentials: true,
-        }
-      )
-      .then((response) => {
+    usersApi
+      .getUsers(this.props.currentPage, this.props.pageSize)
+      .then((data) => {
         this.props.toggleIsFeching(false);
-        this.props.setUsers(response.data.items);
-        this.props.setTotalUserCount(response.data.totalCount);
+        this.props.setUsers(data.items);
+        this.props.setTotalUserCount(data.totalCount);
       });
   }
 
   onPageChanged = (pageNumber) => {
     this.props.setCurrentPage(pageNumber);
     this.props.toggleIsFeching(true);
-    axios
-      .get(
-        `https://social-network.samuraijs.com/api/1.0/users/?page=${pageNumber}&count=100`,
-        {
-          withCredentials: true,
-        }
-      )
-      .then((response) => {
-        this.props.toggleIsFeching(false);
-        this.props.setUsers(response.data.items);
-        this.props.setTotalUserCount(response.data.totalCount);
-      });
+    usersApi.getUsers(pageNumber, this.props.pageSize).then((data) => {
+      this.props.toggleIsFeching(false);
+      this.props.setUsers(data.items);
+      this.props.setTotalUserCount(data.totalCount);
+    });
   };
 
   render() {
